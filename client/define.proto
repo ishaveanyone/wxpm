@@ -1,0 +1,83 @@
+syntax = "proto2";
+
+package com.dist.xpp.protobuf;
+
+option optimize_for = SPEED;
+
+option java_package = "com.dist.define";
+
+option java_outer_classname = "ResponseData";
+
+message Message {
+
+    enum DataType {
+        ConnectType=1;
+        ClientFindStartedProType=2;
+        ClientKillStartedProType=3;
+        ClientFindConfigProType=4;
+        ServerResponseDataType=5;
+        ClientStartProType=6;
+
+
+    }
+
+    required DataType data_type=1;
+
+
+    oneof dataBody{
+        ConnectionInfo conn=2;
+        ClientFindStartedPro clientFindStartedPro=3;
+        ClientKillStartedPro clientKillStartedPro =4;
+        ClientFindConfigPro clientFindConfigPro=5;
+        ServerResponseData serverResponseData=6;
+        ClientStartPro clientStartPro=7;
+
+    }
+}
+
+
+
+message ConnectionInfo{
+
+    optional string message=1;
+    optional int32 statu =2;
+
+}
+
+message ClientFindStartedPro{
+
+    optional string type=1;
+    optional string value=2;
+
+}
+
+message ClientKillStartedPro{
+
+    optional string value=1;
+
+}
+
+
+
+
+
+message ClientFindConfigPro{
+
+    optional string value=1;
+
+}
+
+message ClientStartPro{
+
+    optional string value=1;
+
+}
+
+
+message ServerResponseData {
+
+    optional string value=1;
+    optional int32 type=2;
+
+}
+

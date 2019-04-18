@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.dist.controller.MainController"
+
+>
+   <children>
+      <TextField fx:id="shortName" layoutX="105.0" layoutY="34.0" />
+      <TextField fx:id="path" layoutX="105.0" layoutY="104.0" />
+      <ListView fx:id="configed" layoutX="325.0" layoutY="30.0" prefHeight="233.0" prefWidth="247.0"
+                onMouseClicked="#mouseType" />
+      <Label layoutX="22.0" layoutY="39.0" text="进程缩写" />
+      <Label layoutX="22.0" layoutY="109.0" text="进程路径" />
+      <Button layoutX="18.0" layoutY="171.0" mnemonicParsing="false" text="保存" onAction="#save"/>
+      <Button layoutX="522.0" layoutY="357.0" mnemonicParsing="false" text="删除" onAction="#delete"/>
+      <Label layoutX="325.0" layoutY="5.0" text="已配置的" />
+      <Label fx:id="pathLabel" layoutX="325.0" layoutY="299.0" text="路径：" />
+   </children>
+</Pane>
